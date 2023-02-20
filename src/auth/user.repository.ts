@@ -9,7 +9,6 @@ export class UserRepository extends Repository<User> {
     const { username, password } = authCredentialsDto;
     const user = this.create({ username, password });
 
-    // username 중복 check
     try {
       await this.save(user);
     } catch (error) {
